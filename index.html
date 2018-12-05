@@ -1,0 +1,37 @@
+<html>
+
+<head>
+  <title>Dame una letra</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <script>
+  var letters = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
+  function randomletter() {
+    var rnd = Math.floor(Math.random() * letters.length);
+    var letter = letters.charAt(rnd);
+    document.getElementById("letter").innerText = letter;
+    letters = letters.substring(0, rnd) + letters.substring(rnd+1, letters.length);
+  }
+  </script>
+  <style>
+  body {
+    background-color: black;
+    cursor: pointer;
+  }
+  #letter {
+    color: white;
+    font-family: Arial;
+    font-size: 70vmin;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+  }
+  </style>
+</head>
+
+<body onload="randomletter()" onclick="randomletter()">
+  <div id="letter"></div>
+</body>
+
+</html>
